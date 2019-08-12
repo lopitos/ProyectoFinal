@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+header{
+    background: #8A4B08;
+    width: 100%;
+    height: 10%;
+    margin: 20px auto;
+}
+#btnMenu{
+    display: none;
+}
+header h1{
+    text-align: center;
+    color: rgb(35, 10, 77);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    float: center;
+}
+nav{
+    background: #8A4B08;
+    width: 100%
+}
+nav label{
+    display: none;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-right: 1px solid #ffffff;
+}
+nav label:hover{    /* cuando pasamos el cursor por encima dellabel*/
+    cursor: pointer;        /* cambiara el puntero del raton a una mano */
+    background: rgba(0,0,0,0,3);
+}
+.menu ul{
+    margin: 0;
+    list-style: none;   /* se quita los estilos del menu ul, en este caso los puntos */
+    padding: 0;
+    display: flex;      /* permite alinear al menu de forma horizontal */
+}
+.menu li:hover{         /* al pasar el cursor del raton sobre el menu cambiara de color el fondo */
+    background: rgba(0,0,0,0.3);    
+}
+.menu li a{
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+.menu li a.current{
+    background: #ffffff;
+}
+@media (max-width:700px){       /* cuando achicamos la pantalla hasta un minimo de 700 px se realizara todos esos eventos */
+    nav label{
+        display: block;     /* desplegara el menu */
+    }
+    .menu{
+        position: absolute;
+        background: #8A4B08;
+        width: 50%;
+        margin-left: -50%;      /* ocultara el menu colocando el margen de muestra en valor negativo */
+        transition: all 0.5s;   /* el tiempo de aparicion del menu tendra un retardo de medio segundo */
+    }
+    .menu ul{
+        flex-direction: column;     /* mostrara el menu en forma de columna */
+    }
+    .menu li{
+        border-top: 1px solid #fff;     /* colocamos un borde de 1px separando cada lista del menu */
+    }
+    #btnMenu:checked ~.menu{    /* cuando presionemos en el check boxs que esta oculto */
+        margin-left: 0;     /* permitira mostrar el menu a partir del margen cero */
+    }
+}
+
+
+.main .articulos{   /* bloque principal de la pagina donde iran los articulos */
+    width: 58.5%;   /* colocamos un ancho del 58.5% */
+    margin-right: 1.5%; /* colocamos un margen en el lateral derecho del articulo */
+    float: left;        /* alineamos el articulo hacia la izquerda */
+    margin: 20px auto;       /* colocamos margen inferior y superior de 20 px */
+}
+aside{      /* menu lateral */
+    width: 40%;     /* ocupamos el 40% de la pantalla para el menu lateral */
+    float: left;        /* alineamos hacia la izquierda */
+}
+footer{
+    background: #8A4B08;
+    clear: both;        /* nos permite alinear al pie de pagian hasta el final de la pagina*/
+}
